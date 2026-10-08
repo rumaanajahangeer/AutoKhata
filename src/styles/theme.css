@@ -1,0 +1,331 @@
+/* AutoKhata Design System & Pixel Theme */
+
+:root {
+  --bg-black: #080808;
+  --card-bg: #141414;
+  --card-bg-alt: #1a1a1a;
+  --card-border: #262626;
+  
+  --yellow-primary: #FFC800;
+  --yellow-hover: #FFE066;
+  --yellow-dark: #CCA000;
+  --yellow-glow: rgba(255, 200, 0, 0.2);
+  --yellow-subtle: rgba(255, 200, 0, 0.08);
+
+  --text-main: #FFFFFF;
+  --text-muted: #999999;
+  --text-dim: #666666;
+  
+  --danger: #FF4D4D;
+  --danger-hover: #FF6666;
+  --success: #2ED573;
+
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-mono: 'VT323', monospace;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --pixel-shadow: 4px 4px 0px #000000;
+  --pixel-shadow-yellow: 4px 4px 0px #CCA000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(rgba(255, 200, 0, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Pixel Typography Utilities */
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: -0.5px;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.text-yellow {
+  color: var(--yellow-primary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Pixel Card Container */
+.pixel-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.pixel-card:hover {
+  border-color: rgba(255, 200, 0, 0.3);
+}
+
+.pixel-card-yellow {
+  border-color: var(--yellow-primary);
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.15), var(--pixel-shadow);
+}
+
+/* Retro Pixel Button Styles */
+.btn-pixel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s ease-in-out;
+  box-shadow: 3px 3px 0px #000;
+}
+
+.btn-pixel-primary {
+  background-color: var(--yellow-primary);
+  color: #000000;
+  font-weight: 700;
+}
+
+.btn-pixel-primary:hover {
+  background-color: var(--yellow-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #000;
+}
+
+.btn-pixel-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.btn-pixel-secondary {
+  background-color: #222222;
+  color: var(--text-main);
+  border-color: #333333;
+}
+
+.btn-pixel-secondary:hover {
+  background-color: #2e2e2e;
+  border-color: var(--yellow-primary);
+  color: var(--yellow-primary);
+}
+
+.btn-pixel-danger {
+  background-color: rgba(255, 77, 77, 0.15);
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-pixel-danger:hover {
+  background-color: var(--danger);
+  color: #ffffff;
+}
+
+.btn-icon-only {
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* Form Inputs */
+.pixel-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.pixel-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pixel-input {
+  width: 100%;
+  background-color: #0d0d0d;
+  border: 2px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pixel-input:focus {
+  border-color: var(--yellow-primary);
+  box-shadow: 0 0 12px var(--yellow-glow);
+}
+
+.pixel-input-currency {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.input-prefix-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-prefix-symbol {
+  position: absolute;
+  left: 14px;
+  color: var(--yellow-primary);
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.input-with-prefix {
+  padding-left: 36px !important;
+}
+
+/* Road Curb Motif */
+.road-curb {
+  height: 6px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--yellow-primary),
+    var(--yellow-primary) 16px,
+    #111111 16px,
+    #111111 32px
+  );
+  margin: 16px 0;
+  border-radius: 2px;
+}
+
+/* Wheel Spin Animation */
+@keyframes spin-wheel {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinning-wheel {
+  animation: spin-wheel 0.6s infinite linear;
+}
+
+/* Simple Drive Animation */
+@keyframes drive-road {
+  0% { transform: translateX(-40px); }
+  100% { transform: translateX(calc(100vw + 40px)); }
+}
+
+.driving-auto {
+  animation: drive-road 12s infinite linear;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  border: 2px solid var(--yellow-primary);
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  padding: 24px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Responsive Grid Layouts */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-full-width {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast-item {
+  background: #1c1c1c;
+  border: 2px solid var(--yellow-primary);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: var(--pixel-shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  animation: slideIn 0.3s ease-out;
+  pointer-events: auto;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
